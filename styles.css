@@ -192,6 +192,7 @@ main {
 .network-btn svg {
   width: 30px;
   height: 30px;
+  margin: 0 10px;
 }
 .cell2 {
   background-color: white;

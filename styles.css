@@ -12,7 +12,7 @@ body {
   display: grid;
   grid-template:
     "nav header" 200px
-    "nav main" 1fr
+    "nav main" minmax(78vh, 1fr)
     "footer footer" 100px/
     300px 1fr;
   font-family: "Roboto Mono", monospace;
@@ -55,9 +55,16 @@ main {
 .login {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: right;
   flex: 2;
+  margin-right: 10px;
 }
+.login p,
+.login svg,
+.login img {
+  margin: 0 5px;
+}
+
 .login p {
   font-weight: bold;
   font-size: 1.5em;
@@ -76,8 +83,9 @@ main {
 }
 .right-btn {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: right;
   flex: 1;
+  margin-right: 10px;
 }
 .right-btn button {
   background-color: #1a92d3;
@@ -86,6 +94,7 @@ main {
   padding: 10px 40px;
   border-radius: 50px;
   border: #1a92d3 1px solid;
+  margin: 0 10px;
 }
 
 /* Nav Bar */
@@ -145,12 +154,12 @@ main {
   background-color: #e2e8f0;
   display: grid;
   grid-template:
-    "proj anno" 40%
-    "proj trend" 45%/
-    70% 28%;
+    "proj anno" min-content
+    "proj trend" min-content/
+    3fr 1fr;
   padding: 40px 30px 40px 30px;
   grid-gap: 30px;
-  grid-row-gap: 100px;
+  /* grid-row-gap: 30px; */
 }
 
 .project {
@@ -183,6 +192,9 @@ main {
 
 .cell h3 {
   padding-bottom: 3px;
+}
+.cell p {
+  overflow: hidden;
 }
 .network-btn {
   position: absolute;
@@ -232,4 +244,28 @@ footer {
   align-items: center;
   font-size: 30px;
   font-weight: 700;
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1400px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 1000px) {
+  /* .announc {
+    display: none;
+  }
+  .trending {
+    display: none;
+  } */
+  main {
+    grid-template:
+      "proj proj" 1fr
+      "anno trend" min-content/
+      1fr 1fr;
+    padding-right: 30px;
+  }
+  .projects {
+    grid-template-columns: 1fr;
+  }
 }

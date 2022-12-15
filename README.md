@@ -4,4 +4,4 @@
 # TODO : Add button animation more resulutions support
 
 
-#Live @ https://chloe199719.github.io/Admin-DashBoard
+#Live @https://chloe199719.github.io/Admin-Dashboard/
